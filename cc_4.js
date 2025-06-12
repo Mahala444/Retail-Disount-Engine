@@ -7,3 +7,19 @@ const inventory = [
   { name: "Board Game", category: "toys", price: 35, inventory: 5 }
 ];
 
+for (const item of inventory) {
+  switch (item.category) {
+    case "electronics":
+      item.discounted = item.price * 0.8; // 20% off
+      break;
+    case "apparel":
+      item.discounted = item.price * 0.85; // 15% off
+      break;
+    case "groceries":
+    case "household":
+      item.discounted = item.price * 0.9; // 10% off
+      break;
+    default:
+      item.discounted = item.price; // no discount
+  }
+}
