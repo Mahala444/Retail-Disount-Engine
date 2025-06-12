@@ -23,3 +23,9 @@ for (const item of inventory) {
       item.discounted = item.price; // no discount
   }
 }
+
+function getCustomerDiscount(type) {
+  if (type === "student") return 0.05;
+  else if (type === "senior") return 0.07;
+  else return 0;
+}
