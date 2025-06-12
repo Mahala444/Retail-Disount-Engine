@@ -48,3 +48,10 @@ for (let customerNum = 0; customerNum < 3; customerNum++) {
 
   console.log(`Customer ${customerNum + 1} (${custType}) paid: $${total.toFixed(2)}`);
 }
+
+console.log("\nProduct details after discounts (1st product):");
+const firstItem = inventory[0];
+
+for (const key in firstItem) {
+  console.log(`${key}: ${firstItem[key]}`);
+}
