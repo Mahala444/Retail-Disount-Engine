@@ -29,3 +29,22 @@ function getCustomerDiscount(type) {
   else if (type === "senior") return 0.07;
   else return 0;
 }
+
+const customerTypes = ["senior", "student", "regular"];
+
+for (let customerNum = 0; customerNum < 3; customerNum++) {
+  const custType = customerTypes[customerNum];
+  let subtotal = 0;
+
+  for (const item of inventory) {
+    if (item.inventory > 0) {
+      subtotal += item.discounted;
+      item.inventory--; // Reduce inventory after purchase
+    }
+  }
+
+  const extraDiscount = getCustomerDiscount(custType);
+  const total = subtotal * (1 - extraDiscount);
+
+  console.log(`Customer ${customerNum + 1} (${custType}) paid: $${total.toFixed(2)}`);
+}
