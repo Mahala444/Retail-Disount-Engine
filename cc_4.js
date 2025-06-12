@@ -55,3 +55,12 @@ const firstItem = inventory[0];
 for (const key in firstItem) {
   console.log(`${key}: ${firstItem[key]}`);
 }
+
+console.log("\nUpdated product inventory:");
+
+for (const item of inventory) {
+  for (const [key, value] of Object.entries(item)) {
+    console.log(`${key}: ${value}`);
+  }
+  console.log("---");
+}
